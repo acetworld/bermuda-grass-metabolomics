@@ -1,4 +1,6 @@
 
+
+if (!require("devtools")) install.packages("devtools")
 if (!require("pacman")) install.packages("pacman")
 if (!require('MASS')) pacman::p_install('MASS')
 if (!require('Hmisc')) pacman::p_install('Hmisc')
