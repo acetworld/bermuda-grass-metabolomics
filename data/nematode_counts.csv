@@ -1,0 +1,48 @@
+﻿# Counts of Sting nematode Belonolaimus longicaudatus on bermuda grass varieties
+# Study conducted at University of Florida by Nicole Benda et. al in 2017
+# These data complement data from the metabolomics workbench (http://www.metabolomicsworkbench.org/)
+# study id ST000353.  
+
+line,treatment,plant_number,nematode_count,weight,inoculated_designation,identifier
+AB03,inoc,1,134,0.3306,I,AB03_I_1
+AB03,inoc,2,149,0.1281,I,AB03_I_2
+AB03,inoc,4,66,0.2718,I,AB03_I_4
+AB03,inoc,5,124,0.1316,I,AB03_I_5
+AB03,inoc,7,19,0.2448,I,AB03_I_7
+AB03,inoc,10,2,0.1659,I,AB03_I_10
+AB03,inoc,13,2,0.1222,I,AB03_I_13
+AB03,uninoc,3,0,0.4112,U,AB03_U_3
+AB03,uninoc,4,0,0.4347,U,AB03_U_4
+AB03,uninoc,6,0,0.4944,U,AB03_U_6
+AB03,uninoc,7,0,0.445,U,AB03_U_7
+AB03,uninoc,8,0,0.3666,U,AB03_U_8
+AB03,uninoc,11,0,0.5385,U,AB03_U_11
+AB03,uninoc,14,0,0.3597,U,AB03_U_14
+AB33,inoc,1,166,0.0994,I,AB33_I_1
+AB33,inoc,2,118,0.163,I,AB33_I_2
+AB33,inoc,3,183,0.1815,I,AB33_I_3
+AB33,inoc,5,192,0.1323,I,AB33_I_5
+AB33,inoc,8,243,0.1893,I,AB33_I_8
+AB33,inoc,10,109,0.1014,I,AB33_I_10
+AB33,inoc,11,249,0.1789,I,AB33_I_11
+AB33,uninoc,2,0,0.3612,U,AB33_U_2
+AB33,uninoc,4,0,0.2545,U,AB33_U_4
+AB33,uninoc,7,0,0.3785,U,AB33_U_7
+AB33,uninoc,8,0,0.4366,U,AB33_U_8
+AB33,uninoc,9,0,0.3467,U,AB33_U_9
+AB33,uninoc,11,0,0.3001,U,AB33_U_11
+AB33,uninoc,13,0,0.326,U,AB33_U_13
+AB39,inoc,1,48,0.227,I,AB39_I_1
+AB39,inoc,3,47,0.7253,I,AB39_I_3
+AB39,inoc,4,61,0.8748,I,AB39_I_4
+AB39,inoc,6,53,0.1251,I,AB39_I_6
+AB39,inoc,8,130,0.3302,I,AB39_I_8
+AB39,inoc,11,187,0.2353,I,AB39_I_11
+AB39,inoc,12,85,0.2347,I,AB39_I_12
+AB39,uninoc,2,0,0.3644,U,AB39_U_2
+AB39,uninoc,3,0,0.4678,U,AB39_U_3
+AB39,uninoc,5,0,0.2858,U,AB39_U_5
+AB39,uninoc,6,0,0.3558,U,AB39_U_6
+AB39,uninoc,7,0,0.3791,U,AB39_U_7
+AB39,uninoc,9,0,0.3635,U,AB39_U_9
+AB39,uninoc,10,0,0.3934,U,AB39_U_10
