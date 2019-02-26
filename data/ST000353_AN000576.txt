@@ -1,4 +1,185 @@
-metabolite_name	AB33_I_8	AB33_I_10	AB33_I_3	AB33_I_2	AB33_I_1	AB33_I_11	AB03_U_8	AB03_U_11	AB33_U_4	AB33_U_7	AB33_U_2	AB33_U_8	AB03_U_7	AB03_U_6	AB03_U_14	AB03_I_4	AB33_U_11	AB33_U_9	AB03_U_4	AB03_U_3	AB03_I_1	AB33_U_13	AB39_I_1	AB39_I_3	AB03_I_2	AB03_I_10	AB03_I_13	AB39_I_9	AB39_I_4	AB39_I_8	AB03_I_5	AB39_U_2	AB39_U_10	AB39_U_3	AB03_I_7	AB39_U_5	AB39_U_9	AB39_I_12	AB39_I_11	AB39_U_6	AB39_U_7
+
+#METABOLOMICS WORKBENCH kenanazam_20160223_201341 STUDY_ID:ST000353 ANALYSIS_ID:AN000576
+VERSION             	1
+CREATED_ON             	February 23, 2016, 9:42 pm
+#PROJECT
+PR:PROJECT_TITLE                 	The Development of Metabolomic Markers in Bermudagrass (Cynodon spp.) for Sting
+PR:PROJECT_TITLE                 	Nematode (Belonolaimus longicaudatus) Response
+PR:PROJECT_TYPE                  	The majority of golf courses in Florida experience damage from plant-parasitic
+PR:PROJECT_TYPE                  	nematodes and more than 80% of golf courses in Florida are at risk for
+PR:PROJECT_TYPE                  	nematode-related damage (Crow, 2005). With limited availability of nematicides
+PR:PROJECT_TYPE                  	and lack of tolerant cultivars, turf managers need new genetically resistant
+PR:PROJECT_TYPE                  	cultivars. Use of resistant or tolerant grasses is the most efficient,
+PR:PROJECT_TYPE                  	environmentally friendly and, in the long run, least costly component of IPM.
+PR:PROJECT_SUMMARY               	Current screening of new genotypes for nematode resistance is labor- and
+PR:PROJECT_SUMMARY               	time-intensive, with three months required soley for nematode development on
+PR:PROJECT_SUMMARY               	test plants. We intend to develop metabolomic markers or a signature pattern
+PR:PROJECT_SUMMARY               	associated with nematode resistance or tolerance. Screening plants for these
+PR:PROJECT_SUMMARY               	markers or a signature pattern of would greatly speed up the screening process
+PR:PROJECT_SUMMARY               	and development of resistant cultivars.
+PR:INSTITUTE                     	University of Florida
+PR:DEPARTMENT                    	Agronomy
+PR:LABORATORY                    	Turfgrass Breeding
+PR:LAST_NAME                     	Kenworthy
+PR:FIRST_NAME                    	Kevin
+PR:ADDRESS                       	2005 SW 23rd Street, Gainesville FL 32611
+PR:EMAIL                         	nbenda@ufl.edu
+PR:PHONE                         	352-792-4561
+#STUDY
+ST:STUDY_TITLE                   	The Development of Metabolomic Markers in African Bermudagrass (C.
+ST:STUDY_TITLE                   	transvaalensis) for Sting Nematode (Belonolaimus longicaudatus) Response
+ST:STUDY_TYPE                    	Disease response in terms of nematode reproduction and root weight
+ST:STUDY_SUMMARY                 	The objective of the proposed pilot study is to identify metabolites up- and
+ST:STUDY_SUMMARY                 	down-regulated in African bermudagrass that are tolerant and sensitive to the
+ST:STUDY_SUMMARY                 	sting nematode and develop metabolomic markers for the highest expressed
+ST:STUDY_SUMMARY                 	metabolites associated with tolerance. Future work will include additional
+ST:STUDY_SUMMARY                 	accessions and species of bermudagrass, and testing under field conditions.
+ST:STUDY_SUMMARY                 	Bermudagrass accessions identified as tolerant or sensitive by Pang et al.
+ST:STUDY_SUMMARY                 	(2011) will be assessed under controlled greenhouse conditions to identify
+ST:STUDY_SUMMARY                 	metabolites linked to sting nematode tolerance. Nematode response will be
+ST:STUDY_SUMMARY                 	quantified through determination of root length and weight and the number of
+ST:STUDY_SUMMARY                 	nematodes present 136 days after inoculation. Higher root length and weight
+ST:STUDY_SUMMARY                 	indicate tolerance or resistance. Higher nematode counts indicate greater
+ST:STUDY_SUMMARY                 	reproduction (i.e. a susceptible plant), while lower counts indicate that the
+ST:STUDY_SUMMARY                 	accession may have some resistance. Metabolites from root tissue of these
+ST:STUDY_SUMMARY                 	accessions will be compared to identify those associated with
+ST:STUDY_SUMMARY                 	tolerance/resistance, and those that are associated with nematode infestation by
+ST:STUDY_SUMMARY                 	comparing inoculated plants to uninoculated controls. Metabolomic markers will
+ST:STUDY_SUMMARY                 	then be developed for the metabolites associated with tolerance/resistance.
+ST:STUDY_SUMMARY                 	These markers will be used to guide future screening of bermudagrass accessions
+ST:STUDY_SUMMARY                 	for breeding nematode-tolerant or -resistant varieties.
+ST:INSTITUTE                     	University of Florida
+ST:DEPARTMENT                    	SECIM
+ST:LABORATORY                    	Turfgrass Breeding
+ST:LAST_NAME                     	Benda
+ST:FIRST_NAME                    	Nicole
+ST:ADDRESS                       	2005 SW 23rd St
+ST:EMAIL                         	nbenda@ufl.edu
+ST:PHONE                         	352-792-4561
+ST:SUBMIT_DATE                   	11-13-2015
+ST:NUM_GROUPS                    	3
+ST:TOTAL_SUBJECTS                	42
+#SUBJECT
+SU:SUBJECT_TYPE                  	Plant
+SU:SUBJECT_SPECIES               	C. transvaalensis
+SU:GENOTYPE_STRAIN               	AB03, AB33, and AB39
+SU:AGE_OR_AGE_RANGE              	4 month old plant clones
+SU:SUBJECT_COMMENTS              	(African Bermudagrass,C. transvaalensis)
+#SUBJECT_SAMPLE_FACTORS:         	SUBJECT(optional)[tab]SAMPLE[tab]FACTORS(NAME:VALUE pairs separated by |)[tab]Additional sample data
+SUBJECT_SAMPLE_FACTORS           	-	AB03_I_1	Plant genotype:AB03 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB03_I_2	Plant genotype:AB03 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB03_I_4	Plant genotype:AB03 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB03_I_5	Plant genotype:AB03 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB03_I_7	Plant genotype:AB03 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB03_I_10	Plant genotype:AB03 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB03_I_13	Plant genotype:AB03 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB03_U_3	Plant genotype:AB03 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB03_U_4	Plant genotype:AB03 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB03_U_6	Plant genotype:AB03 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB03_U_7	Plant genotype:AB03 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB03_U_8	Plant genotype:AB03 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB03_U_11	Plant genotype:AB03 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB03_U_14	Plant genotype:AB03 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB33_I_1	Plant genotype:AB33 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB33_I_2	Plant genotype:AB33 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB33_I_3	Plant genotype:AB33 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB33_I_5	Plant genotype:AB33 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB33_I_8	Plant genotype:AB33 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB33_I_10	Plant genotype:AB33 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB33_I_11	Plant genotype:AB33 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB33_U_2	Plant genotype:AB33 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB33_U_4	Plant genotype:AB33 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB33_U_7	Plant genotype:AB33 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB33_U_8	Plant genotype:AB33 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB33_U_9	Plant genotype:AB33 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB33_U_11	Plant genotype:AB33 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB33_U_13	Plant genotype:AB33 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB39_I_1	Plant genotype:AB39 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB39_I_3	Plant genotype:AB39 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB39_I_4	Plant genotype:AB39 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB39_I_8	Plant genotype:AB39 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB39_I_9	Plant genotype:AB39 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB39_I_11	Plant genotype:AB39 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB39_I_12	Plant genotype:AB39 | Nematode inoculation:inoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB39_U_2	Plant genotype:AB39 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB39_U_3	Plant genotype:AB39 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB39_U_5	Plant genotype:AB39 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB39_U_6	Plant genotype:AB39 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB39_U_7	Plant genotype:AB39 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB39_U_9	Plant genotype:AB39 | Nematode inoculation:uninoc	
+SUBJECT_SAMPLE_FACTORS           	-	AB39_U_10	Plant genotype:AB39 | Nematode inoculation:uninoc	
+#COLLECTION
+CO:COLLECTION_SUMMARY            	Rinsed roots were cut off the plant, placed into paper envelopes, and
+CO:COLLECTION_SUMMARY            	immediately placed into liquid nitrogen. Roots were stored at -80°C until
+CO:COLLECTION_SUMMARY            	freeze-drying. Freeze-dried roots were held at room temperature in ziploc bags
+CO:COLLECTION_SUMMARY            	with silica gel packets. They were then frozen in liquid nitrogen and ground to
+CO:COLLECTION_SUMMARY            	a powder in a tissue homogenizer with ball bearings (Geno/Grinder 2010), and
+CO:COLLECTION_SUMMARY            	then stored in 2 ml snap-cap plastic tubes at room temperature.
+CO:SAMPLE_TYPE                   	plant root tissue
+CO:COLLECTION_METHOD             	whole plant destruction
+CO:COLLECTION_LOCATION           	greenhouse
+CO:COLLECTION_FREQUENCY          	once
+CO:COLLECTION_DURATION           	1-2 minutes to cut off and rinse the roots prior to placement into liquid
+CO:COLLECTION_DURATION           	nitrogen
+CO:COLLECTION_TIME               	136 days after inoculation
+CO:VOLUMEORAMOUNT_COLLECTED      	0.2-0.5 grams of root tissue, dry weight
+CO:STORAGE_CONDITIONS            	1)-80C until freeze-drying. 2) Held at room temperature in ziploc bags with
+CO:STORAGE_CONDITIONS            	silica packets. 3) Frozen in liquid nitrogen and ground using a Geno/Grinder
+CO:STORAGE_CONDITIONS            	2010. 4) Transferred to 2 mL tubes and held at room temperature.
+CO:COLLECTION_VIALS              	Paper coin envelopes
+CO:STORAGE_VIALS                 	2 ml snap-cap plastic tubes
+CO:COLLECTION_TUBE_TEMP          	liquid nitrogen (-196°C)
+CO:ADDITIVES                     	none
+#TREATMENT
+TR:TREATMENT_SUMMARY             	Plants clones propagated by stolons were allowed to establish for 30 days in 4
+TR:TREATMENT_SUMMARY             	cm diameter conetainers filled with sand. Fifty sting nematodes (mixed age and
+TR:TREATMENT_SUMMARY             	gender) were added to each conetainer and allowed to grow and reproduce for 90
+TR:TREATMENT_SUMMARY             	days. Nematodes were then rinsed off of roots for quantification, and plant
+TR:TREATMENT_SUMMARY             	roots were frozen in liquid nitrogen and stored at -80C until they were
+TR:TREATMENT_SUMMARY             	freeze-dried.Freeze-dried roots were ground to a powder and then submitted for
+TR:TREATMENT_SUMMARY             	global metabolomic analysis.
+TR:TREATMENT                     	Biotic
+TR:TREATMENT_COMPOUND            	Sting nematode, Belonolaimus longicaudatus
+TR:PLANT_GROWTH_SUPPORT          	sand in conetainers- 4 cm wide, 30 cm deep
+TR:PLANT_GROWTH_LOCATION         	temperature controlled greenhouse
+TR:PLANT_PLOT_DESIGN             	complete randomized design
+TR:PLANT_LIGHT_PERIOD            	Natural lighting, ca. 11:13 Light:Dark
+TR:PLANT_HUMIDITY                	ca.50%RH
+TR:PLANT_TEMP                    	25°C
+TR:PLANT_WATERING_REGIME         	Twice daily for 5 min
+TR:PLANT_NUTRITIONAL_REGIME      	Weekly liquid fertilizer of 24-8-16 (N-P-K)
+TR:PLANT_ESTAB_DATE              	09-24-2015
+TR:PLANT_HARVEST_DATE            	04-02-2016
+TR:PLANT_GROWTH_STAGE            	non-reproductive
+TR:PLANT_METAB_QUENCH_METHOD     	liquid nitrogen, followed by storage at -80°C
+TR:PLANT_HARVEST_METHOD          	rinsed roots were cut off the plant and placed into paper envelopes
+TR:PLANT_STORAGE                 	1)-80C until freeze-drying. 2) Held at room temperature in ziploc bags with
+TR:PLANT_STORAGE                 	silica packets. 3) Frozen in liquid nitrogen and ground using a Geno/Grinder
+TR:PLANT_STORAGE                 	2010. 4) Transferred to 2 mL tubes and held at room temperature.
+#SAMPLEPREP
+SP:SAMPLEPREP_SUMMARY            	none
+SP:SAMPLEPREP_PROTOCOL_FILENAME  	Maize_Tissue_sample_prep.pdf
+#CHROMATOGRAPHY
+CH:CHROMATOGRAPHY_SUMMARY     	See document
+CH:CHROMATOGRAPHY_TYPE        	UHPLC
+CH:INSTRUMENT_NAME            	Thermo Scientific-Dionex Ultimate 3000
+CH:COLUMN_NAME                	ACE Excel 2 C18-PFP
+CH:METHODS_FILENAME           	Metabolomics_LCMSProtocol.pdf;Appendix A - Internal Standard Prep GLCMS.pdf
+CH:INTERNAL_STANDARD          	Appendix A - Internal Standard Prep GLCMS.pdf
+#ANALYSIS
+AN:ANALYSIS_TYPE            	MS
+AN:ANALYSIS_PROTOCOL_FILE   	Metabolomics_LCMSProtocol.pdf
+#MS
+MS:INSTRUMENT_NAME          	Thermo Scientific Q-Exactive Orbitrap
+MS:INSTRUMENT_TYPE          	Orbitrap
+MS:MS_TYPE                  	Other
+MS:ION_MODE                 	NEGATIVE
+MS:MS_COMMENTS              	HESI
+#MS_METABOLITE_DATA
+MS_METABOLITE_DATA:UNITS	peak area
+MS_METABOLITE_DATA_START
+Samples	AB33_I_8	AB33_I_10	AB33_I_3	AB33_I_2	AB33_I_1	AB33_I_11	AB03_U_8	AB03_U_11	AB33_U_4	AB33_U_7	AB33_U_2	AB33_U_8	AB03_U_7	AB03_U_6	AB03_U_14	AB03_I_4	AB33_U_11	AB33_U_9	AB03_U_4	AB03_U_3	AB03_I_1	AB33_U_13	AB39_I_1	AB39_I_3	AB03_I_2	AB03_I_10	AB03_I_13	AB39_I_9	AB39_I_4	AB39_I_8	AB03_I_5	AB39_U_2	AB39_U_10	AB39_U_3	AB03_I_7	AB39_U_5	AB39_U_9	AB39_I_12	AB39_I_11	AB39_U_6	AB39_U_7
+Factors	Plant genotype:AB33 | Nematode inoculation:inoc	Plant genotype:AB33 | Nematode inoculation:inoc	Plant genotype:AB33 | Nematode inoculation:inoc	Plant genotype:AB33 | Nematode inoculation:inoc	Plant genotype:AB33 | Nematode inoculation:inoc	Plant genotype:AB33 | Nematode inoculation:inoc	Plant genotype:AB03 | Nematode inoculation:uninoc	Plant genotype:AB03 | Nematode inoculation:uninoc	Plant genotype:AB33 | Nematode inoculation:uninoc	Plant genotype:AB33 | Nematode inoculation:uninoc	Plant genotype:AB33 | Nematode inoculation:uninoc	Plant genotype:AB33 | Nematode inoculation:uninoc	Plant genotype:AB03 | Nematode inoculation:uninoc	Plant genotype:AB03 | Nematode inoculation:uninoc	Plant genotype:AB03 | Nematode inoculation:uninoc	Plant genotype:AB03 | Nematode inoculation:inoc	Plant genotype:AB33 | Nematode inoculation:uninoc	Plant genotype:AB33 | Nematode inoculation:uninoc	Plant genotype:AB03 | Nematode inoculation:uninoc	Plant genotype:AB03 | Nematode inoculation:uninoc	Plant genotype:AB03 | Nematode inoculation:inoc	Plant genotype:AB33 | Nematode inoculation:uninoc	Plant genotype:AB39 | Nematode inoculation:inoc	Plant genotype:AB39 | Nematode inoculation:inoc	Plant genotype:AB03 | Nematode inoculation:inoc	Plant genotype:AB03 | Nematode inoculation:inoc	Plant genotype:AB03 | Nematode inoculation:inoc	Plant genotype:AB39 | Nematode inoculation:inoc	Plant genotype:AB39 | Nematode inoculation:inoc	Plant genotype:AB39 | Nematode inoculation:inoc	Plant genotype:AB03 | Nematode inoculation:inoc	Plant genotype:AB39 | Nematode inoculation:uninoc	Plant genotype:AB39 | Nematode inoculation:uninoc	Plant genotype:AB39 | Nematode inoculation:uninoc	Plant genotype:AB03 | Nematode inoculation:inoc	Plant genotype:AB39 | Nematode inoculation:uninoc	Plant genotype:AB39 | Nematode inoculation:uninoc	Plant genotype:AB39 | Nematode inoculation:inoc	Plant genotype:AB39 | Nematode inoculation:inoc	Plant genotype:AB39 | Nematode inoculation:uninoc	Plant genotype:AB39 | Nematode inoculation:uninoc
 100.9455	8840.0000	\N	\N	1460.0000	\N	1400.0000	1730000.0000	58200.0000	\N	\N	27200.0000	23000.0000	1350.0000	761000.0000	4050.0000	1780000.0000	\N	116000.0000	4720.0000	333000.0000	4670000.0000	122000.0000	5530.0000	1660000.0000	510000.0000	364000.0000	\N	172000.0000	12000.0000	\N	2140000.0000	1900000.0000	19800.0000	13000.0000	1380000.0000	924000.0000	1730000.0000	355000.0000	1590000.0000	114000.0000	2300000.0000
 103.0031	1030000.0000	1720000.0000	300000.0000	1140000.0000	1910000.0000	306000.0000	1200000.0000	308000.0000	929000.0000	673000.0000	741000.0000	1440000.0000	992000.0000	613000.0000	908000.0000	1370000.0000	3780000.0000	1100000.0000	1170000.0000	880000.0000	5110000.0000	1020000.0000	1290000.0000	1130000.0000	2540000.0000	957000.0000	1690000.0000	746000.0000	834000.0000	687000.0000	1300000.0000	1350000.0000	1430000.0000	1730000.0000	910000.0000	3830000.0000	2130000.0000	818000.0000	295000.0000	2930000.0000	3930000.0000
 105.0188	45700.0000	206000.0000	195000.0000	213000.0000	127000.0000	192000.0000	12300.0000	15200.0000	53800.0000	110000.0000	80700.0000	154000.0000	24900.0000	6160.0000	43500.0000	35000.0000	170000.0000	182000.0000	65000.0000	16100.0000	14600.0000	66700.0000	4110.0000	8260.0000	21700.0000	33500.0000	44900.0000	5060.0000	5220.0000	7580.0000	36200.0000	12800.0000	14300.0000	8490.0000	19200.0000	11600.0000	9890.0000	6430.0000	17400.0000	18000.0000	46300.0000
@@ -1176,7 +1357,9 @@ Succinic-2,2,3,3-D4 Acid	971000.0000	1460000.0000	1430000.0000	1460000.0000	1120
 TARTARIC ACID	2040000.0000	1950000.0000	2120000.0000	2090000.0000	1510000.0000	2500000.0000	1740000.0000	746000.0000	2410000.0000	1730000.0000	2090000.0000	2380000.0000	1500000.0000	1690000.0000	1470000.0000	2920000.0000	2530000.0000	2430000.0000	1790000.0000	1480000.0000	2210000.0000	1880000.0000	2000000.0000	1670000.0000	2600000.0000	2670000.0000	2780000.0000	2110000.0000	1410000.0000	1770000.0000	3280000.0000	2380000.0000	1920000.0000	2160000.0000	2890000.0000	2750000.0000	2340000.0000	1670000.0000	1550000.0000	2400000.0000	2940000.0000
 THEOPHYLLINE	112000.0000	22800.0000	243000.0000	180000.0000	172000.0000	334000.0000	236000.0000	77100.0000	14800.0000	351000.0000	90500.0000	217000.0000	167000.0000	185000.0000	245000.0000	352000.0000	242000.0000	577000.0000	115000.0000	473000.0000	55000.0000	73300.0000	1060000.0000	774000.0000	276000.0000	352000.0000	404000.0000	1190000.0000	637000.0000	1190000.0000	424000.0000	199000.0000	184000.0000	354000.0000	165000.0000	945000.0000	307000.0000	216000.0000	225000.0000	334000.0000	1820000.0000
 URIDINE	4780000.0000	10800000.0000	7830000.0000	5410000.0000	3900000.0000	21600000.0000	4340000.0000	1550000.0000	4450000.0000	3710000.0000	5420000.0000	4680000.0000	3270000.0000	2850000.0000	3680000.0000	9160000.0000	6730000.0000	6580000.0000	4990000.0000	4220000.0000	3970000.0000	3100000.0000	4570000.0000	5660000.0000	4550000.0000	6770000.0000	10600000.0000	9980000.0000	1800000.0000	6400000.0000	10900000.0000	4440000.0000	4010000.0000	5060000.0000	6700000.0000	11700000.0000	5930000.0000	3930000.0000	3850000.0000	6180000.0000	14700000.0000
-
+MS_METABOLITE_DATA_END
+#METABOLITES
+METABOLITES_START
 metabolite_name	retention index	quantified m/z	PubChem ID	KEGG ID
 100.9455	0.96	100.9455
 103.0031	0.85	103.0031
@@ -2355,3 +2538,4 @@ Succinic-2,2,3,3-D4 Acid	2.22	121.0441
 TARTARIC ACID	0.81	149.0085	444305
 THEOPHYLLINE	6.97	179.0557	2153
 URIDINE	2.79	243.0614	6029
+METABOLITES_END
