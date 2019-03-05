@@ -1,3 +1,15 @@
+#########################################
+#                                       #
+#       Bermuda Grass Metabolomics      #
+#                                       #
+#########################################
+
+
+# ACET Lab
+# Denis Willett
+# March 2019
+
+
 source('./analysis/packages.R')
 
 # Load Data --------------------------
