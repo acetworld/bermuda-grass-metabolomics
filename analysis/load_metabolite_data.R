@@ -63,7 +63,7 @@ test_that('We did not read in end of file designator', {
 common_columns <- intersect(colnames(positive), colnames(negative))
 
 # Put the data together
-nematode_data <- rbind(
+metabolite_data <- rbind(
     select_(positive, .dots = common_columns),
     select_(negative, .dots = common_columns)
 )

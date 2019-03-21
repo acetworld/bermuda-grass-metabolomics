@@ -8,4 +8,5 @@ pacman::p_load('tidyverse', 'stringr', 'foreach', 'testthat', 'VIM', 'vsn',
                'pvclust', 'dendextend', 'circlize', 'lettercase', 
                'RColorBrewer', 'kohonen', 'caret', 'vegan', 'lmPerm',
                'randomForest', 'doMC', 'forcats', 'plotROC','car','emmeans',
-               'multcompView', 'lmtest', 'vegan', 'candisc', 'indicspecies')
+               'multcompView', 'lmtest', 'vegan', 'candisc', 'indicspecies',
+               'ggdendro')
