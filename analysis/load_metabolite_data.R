@@ -6,7 +6,6 @@
 
 
 # ACET Lab
-# Denis Willett
 # March 2019
 
 
