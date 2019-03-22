@@ -231,10 +231,12 @@ for (i in seq(1:bootstrap_reps)) {
         mutate(bootstrap_rep = i,
                coefficient = rep(c('intercept', 'nematode_count'),3))
     
+    # store samples
     bootstrapped_loss_model <- bind_rows(bootstrapped_loss_model, biomass_loss_model)
     
 }
 
+# Examine medians of bootstrapped loss for comparison
 bootstrapped_loss_plot <- bootstrapped_loss %>%
     select(line, bootstrap_rep, loss) %>%
     group_by(line, bootstrap_rep) %>%
@@ -244,24 +246,13 @@ bootstrapped_loss_plot <- bootstrapped_loss %>%
               low = quantile(median, 0.025),
               high = quantile(median, 0.975))
 
-
-fig3_root_loss <- ggplot(bootstrapped_loss_plot, 
-                         aes(x = line, y = med_med, color = line)) + 
-    geom_point() + 
-    geom_errorbar(aes(x = line, ymin = low, ymax = high)) + 
-    theme_bw() +
-    scale_color_grey() + 
-    labs(x = 'Line', y = 'Biomass Loss (g)') + 
-    theme(legend.position = 'none')
-
-ggsave(plot = fig3_root_loss, filename = './figures/fig3-root-loss.pdf',
-       width = 8, height = 5)
-
+# Permutation Test on estimated root loss
 bootstrap_test <- bootstrapped_loss %>% 
     select(line, bootstrap_rep, loss) %>% 
     group_by(line, bootstrap_rep) %>% 
     summarize(mn = median(loss)) %>% 
     spread(line, mn) %>%
+    # one-sided comparisons here:
     mutate(AB39_AB03 = AB39 > AB03,
            AB39_AB33 = AB39 > AB33,
            AB33_AB03 = AB33 > AB03) %>%
@@ -269,125 +260,26 @@ bootstrap_test <- bootstrapped_loss %>%
     gather(key = 'test', value = 'comparison_result') %>%
     group_by(test) %>%
     summarize(val = mean(comparison_result)) %>%
+    # conservatively adjust for multiple comparisons
     mutate(bonferroni_correction = val * 3)
 
+# Display results
+error_bar_width = 0.48
 
----------------------------------------------------
-    
-    
-    
-    
-    mean(test$test)
-
-ggplot(bootstrapped_loss, aes(x = line, y = loss)) +
-    geom_violin() +
-    theme_bw()
-
-ggplot(bootstrapped_loss, aes(x = nematode_count, y = loss, 
-                              color = line, shape = line)) +
+fig3_root_loss <- ggplot(bootstrapped_loss_plot, 
+                         aes(x = line, y = med_med, color = line)) + 
     geom_point() + 
-    stat_smooth(method = 'lm', level = 0.99) + 
-    scale_color_grey() + 
+    geom_errorbar(aes(x = line, ymin = low, ymax = high),
+                  width = error_bar_width) + 
     theme_bw() +
-    geom_abline(slope = -0.000160, intercept = 0.213)
-
-ggplot(filter(bootstrapped_loss_model, coefficent == 'intercept'),
-       aes(x = model_coefs, fill = line)) + 
-    stat_density() 
-
-ggplot(filter(bootstrapped_loss_model, coefficent == 'nematode_count'),
-       aes(x = model_coefs, fill = line)) +
-    stat_density()
-
-test <- loss_of_biomass %>% mutate(line = as.factor(line)) %>%
-    select(line, nematode_count, loss) %>%
-    group_by(line) %>%
-    nest() %>% 
-    mutate(model = purrr::map(data, loss_model),
-           model_coefs = purrr::map(model, coef))
-
-test %>% select(line, model_coefs) %>% unnest()
-
-ggplot(nematode_counts, 
-       aes(x = nematode_count, y = weight, 
-           color = treatment, shape = line)) + 
-    geom_point() + 
     scale_color_grey() + 
-    theme_bw()
+    labs(x = 'Line', y = 'Biomass Loss (g)') + 
+    theme(legend.position = 'none',
+          panel.border = element_blank(),
+          axis.line.x = element_line(size = 0.48, linetype = 'solid', 
+                                     color = 'black'),
+          axis.line.y = element_line(size = 0.48, linetype = 'solid', 
+                                     color = 'black'))
 
-ggplot(filter(nematode_counts, treatment == 'inoc'), 
-       aes(x = nematode_count, y = weight, color = line)) + 
-    geom_point() + 
-    scale_color_grey() + 
-    #    stat_smooth(method = 'lm') + 
-    theme_bw()
-
-
-filter(bootstrapped_loss_model, coefficent == 'intercept') %>%
-    group_by(line) %>%
-    summarize(low = quantile(model_coefs, 0.05),
-              high = quantile(model_coefs, 0.95))
-
-test <- filter(bootstrapped_loss_model, coefficent == 'intercept') %>%
-    spread(line, model_coefs) %>%
-    mutate(yes = AB33 > AB39)
-
-mean(test$yes)
-
-
-baseline <- lm(weight ~ line, data = filter(nematode_counts, treatment == 'uninoc'))
-summary(baseline)
-Anova(baseline)
-plot(baseline)        
-
-predict(baseline, newdata = filter(nematode_counts, treatment == 'inoc'))
-
-# Bootstrapping estimates of loss -------------------------
-bootstrap_reps = 1000
-
-# select only those plants with nematodes
-inoculated_plants <- filter(nematode_counts[-c(30, 31),], treatment == 'inoc')
-
-# select only those plants without nematodes for baseline
-uninoculated_plants <- filter(nematode_counts[-c(30, 31),], treatment == 'uninoc')
-
-# holder for bootstrapped data:
-bootstrapped_loss <- tibble()
-
-# Bootstrap loss by sampling with replacement uninoculated plants,
-# calculating baseline mean, then subtracting that mean from observed 
-# plants inoculated with nematodes
-for (i in seq(1:bootstrap_reps)) {
-    
-    # sample with replacement and calculate means
-    uninoculated_means <- uninoculated_plants %>%
-        group_by(line) %>% 
-        sample_frac(replace = TRUE) %>%
-        summarize(uninoc_mn = mean(weight))
-    
-    # match means by line and calculate loss
-    loss_of_biomass <- left_join(inoculated_plants, uninoculated_means) %>%
-        mutate(loss = uninoc_mn - weight,
-               bootstrap_rep = i)
-    
-    # record samples for analysis
-    bootstrapped_loss <- bind_rows(bootstrapped_loss, loss_of_biomass)
-    
-}
-
-ggplot(bootstrapped_loss, aes(x = nematode_count, y = loss, 
-                              color = line, shape = line)) +
-    geom_point() + 
-    stat_smooth(method = 'lm') + 
-    scale_color_grey() + 
-    theme_bw()
-
-weight_mod <- lm(weight ~ line + treatment + nematode_count, data = nematode_counts[-c(30, 31),])
-summary(weight_mod)
-Anova(weight_mod, type = 'III')
-plot(weight_mod, which = 1:6)
-qqPlot(weight_mod$residuals)
-outlierTest(weight_mod)
-
-test_diff <- emmeans(weight_mod, ~ line + treatment)
-contrast(test_diff, method = 'pairwise') %>% cld()
+ggsave(plot = fig3_root_loss, filename = './figures/raw-figures/fig1c-root-loss.pdf',
+       width = 5, height = 3)
