@@ -8,7 +8,6 @@
 # Analysis of Nematode Count and Root Biomass Data
 
 # ACET Lab
-# Denis Willett
 # March 2019
 
 source('./analysis/packages.R')
@@ -22,6 +21,7 @@ nematode_counts <- read_csv('./data/nematode_counts.csv', skip = 5)
 # Nematode Counts Analysis-------------------------------------
 
 # Visualize nematode counts
+set.seed(24)
 dodge_width = 0.48
 jitter_width = 0.06
 fig1_nematode_counts <- ggplot(nematode_counts, aes(x = line, y = nematode_count, color = treatment)) + 
@@ -36,13 +36,19 @@ fig1_nematode_counts <- ggplot(nematode_counts, aes(x = line, y = nematode_count
     scale_color_grey(labels = c('Inoculated', 'Uninoculated')) +
     theme_bw() + 
     theme(legend.title = element_blank(),
-          legend.position = c(0.75, 0.124),
+          legend.position = c(0.78, 0.124),
           legend.direction = 'horizontal',
-          legend.background = element_rect(color = 'grey30')) + 
+          legend.background = element_rect(color = 'grey20'),
+          panel.border = element_blank(),
+          axis.line.x = element_line(size = 0.48, linetype = 'solid', 
+                                     color = 'black'),
+          axis.line.y = element_line(size = 0.48, linetype = 'solid', 
+                                     color = 'black'),
+          legend.margin = ggplot2::margin(1, 1, 1, 1)) + 
     labs(x = 'Line', y = 'Sting Nematode Count')
 
-ggsave(plot = fig1_nematode_counts, filename = './figures/fig1-nematode-counts.pdf',
-       width = 8, height = 5)
+ggsave(plot = fig1_nematode_counts, filename = './figures/raw-figures/fig1a-nematode-counts.pdf',
+       width = 5, height = 3)
 
 
 # Model Nematode Counts
@@ -74,7 +80,8 @@ contrast(nematode_count_emm, by = 'treatment', method = 'pairwise')
 
 
 # Visualize Nematode Weights
-dodge_width = 0.48
+set.seed(24)
+dodge_width = 0.58
 jitter_width = 0.06
 # note: outliers removed - see modeling analysis below
 fig2_root_weights <- ggplot(nematode_counts[-c(31,30),], aes(x = line, y = weight, color = treatment)) +
@@ -90,11 +97,17 @@ fig2_root_weights <- ggplot(nematode_counts[-c(31,30),], aes(x = line, y = weigh
     theme_bw() +
     theme(legend.title = element_blank(),
           legend.position = c(0.9, 0.124),
-          legend.background = element_rect(color = 'grey30')) + 
+          legend.background = element_rect(color = 'grey30'),
+          panel.border = element_blank(),
+          axis.line.x = element_line(size = 0.48, linetype = 'solid', 
+                                     color = 'black'),
+          axis.line.y = element_line(size = 0.48, linetype = 'solid', 
+                                     color = 'black'),
+          legend.margin = ggplot2::margin(1, 1, 1, 1)) + 
     labs(x = 'Line', y = 'Root Biomass (g)')
 
-ggsave(plot = fig2_root_weights, filename = './figures/fig2-root-weights.pdf',
-       width = 8, height = 5)
+ggsave(plot = fig2_root_weights, filename = './figures/raw-figures/fig1b-root-weights.pdf',
+       width = 5, height = 3)
 
 # Model root biomass effects 
 
