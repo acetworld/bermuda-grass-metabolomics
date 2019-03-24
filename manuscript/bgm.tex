@@ -57,7 +57,6 @@ Here's a second paragraph to test paragraph indents. \lipsum[1]
 
 \section{Results}
 
-
 Fig1
 
 Fig2
@@ -69,53 +68,8 @@ Fig4
 
 
 
-
-
-\lipsum[2-3]
-
-\begin{table}[bt]
-\caption{\label{tab:example}Automobile Land Speed Records (GR 5-10).}
-% Use "S" column identifier to align on decimal point 
-\begin{tabular}{S l l l r}
-\toprule
-{Speed (mph)} & Driver          & Car                        & Engine    & Date     \\
-\midrule
-407.447     & Craig Breedlove & Spirit of America          & GE J47    & 8/5/63   \\
-413.199     & Tom Green       & Wingfoot Express           & WE J46    & 10/2/64  \\
-434.22      & Art Arfons      & Green Monster              & GE J79    & 10/5/64  \\
-468.719     & Craig Breedlove & Spirit of America          & GE J79    & 10/13/64 \\
-526.277     & Craig Breedlove & Spirit of America          & GE J79    & 10/15/65 \\
-536.712     & Art Arfons      & Green Monster              & GE J79    & 10/27/65 \\
-555.127     & Craig Breedlove & Spirit of America, Sonic 1 & GE J79    & 11/2/65  \\
-576.553     & Art Arfons      & Green Monster              & GE J79    & 11/7/65  \\
-600.601     & Craig Breedlove & Spirit of America, Sonic 1 & GE J79    & 11/15/65 \\
-622.407     & Gary Gabelich   & Blue Flame                 & Rocket    & 10/23/70 \\
-633.468     & Richard Noble   & Thrust 2                   & RR RG 146 & 10/4/83  \\
-763.035     & Andy Green      & Thrust SSC                 & RR Spey   & 10/15/97\\
-\bottomrule
-\end{tabular}
-
-\medskip 
-Source: \url{https://www.sedl.org/afterschool/toolkits/science/pdf/ast_sci_data_tables_sample.pdf}
-
-\tabledata{This is a description of a data source.}
-
-\end{table}
-
-\subsection{Level 2 Heading}
-
-\lipsum[3]
-
-\subsubsection{Level 3 Heading}
-
-\lipsum[5]
-
-\paragraph{Level 4 Heading}
-\lipsum[7]
-
 \section{Discussion}
 
-\lipsum[9]
 
 \section{Methods and Materials}
 
@@ -181,73 +135,48 @@ Use section and subsection commands to organize your document. \LaTeX{} handles 
 
 \subsection{Figures and Tables}
 
-Use the table and tabular commands for basic tables --- see \TABLE{example}, for example. 
+\begin{figure}
+\begin{fullwidth}
+\includegraphics[width=0.95\linewidth]{figures/publication_figures/figure-1.pdf}
+\caption{Sting nematode (\textit{Belonolaimus longicaudatus}) response to three different lines of bermudagrass.  A) Counts of sting nematodes recovered from the roots of bermudagrass 90 days after inoculation.  B) Bermudagrass root damage from sting nematode.  C) Root biomass of inoculated and uninoculated bermudagrass.  D) Loss of bermudagrass root biomass due to infection by sting nematode.  In A and C, transparent points are raw observations while solid points and error bars represent mean and bootstrapped 95\% confidence intervals respectively.  In D, points and error bars represent median bootstrapped root loss and bootstrapped 95\% confidence intervals respectively.   }
+\label{fig:figure1}
+\end{fullwidth}
+\end{figure}
 
-You can upload a figure (JPEG, PNG or PDF) using the project menu. To include it in your document, use the \verb|\includegraphics| command as in the code for \FIG{view}. 
-
-For a half-width figure or table with text wrapping around it, use 
-
-\begin{verbatim}
-\begin{wrapfigure}{l}{.46\textwidth}
-  \includegraphics[width=\hsize]{...}
-  \caption{...}\label{...}
-\end{wrapfigure}
-\end{verbatim}
-%
-as in \FIG{halfwidth}. For tables:
-
-\begin{verbatim}
-\begin{wraptable}{l}{.46\textwidth}{
-  \begin{tabular}{...}
-  ...
-  \end{tabular}}
-  \caption{...}\label{...}
-\end{wraptable}
-\end{verbatim}
-
-Be careful with these, though, as they may behave strangely near page boundaries, sectional headings, or in the neighbourhood of lists or too many floats.
-
-Labels for main videos can be added with \verb|\video| e.g.
-
-\video{Ths is a description of a main video.}\label{video:mv1}
-\video{Another!}
-
-Labels for video supplements can be added within \texttt{figure} environments, after the \texttt{caption}, using the \verb|\videosupp| command: see \VIDEOSUPP[view]{sv1} for an example.
-
-If you use the following prefixes for your \verb|\label|:
-%
-\begin{description}
-\item[Figures] \texttt{fig:}, e.g.~\verb|\label{fig:view}|
-\item[Figure Supplements] \texttt{figsupp:}, e.g.~\verb|\label{figsupp:sf1}|\\
-(we'll assume \texttt{figsupp:sf1} is a figure supplement of \texttt{fig:view} in our example)
-\item[Figure source data] \texttt{figdata:}, e.g.~\verb|\label{figdata:first}|
-\item[Videos] \texttt{video:}, e.g.~\verb|\label{video:mv1}|
-\item[Video supplements] \texttt{videosupp:}, e.g.~\verb|\label{videosupp:sv1}|
-\item[Tables] \texttt{tab:}, e.g.~\verb|\label{tab:example}|
-\item[Equations] \texttt{eq:}, e.g.~\verb|\label{eq:CLT}|
-\item[Boxes] \texttt{box:}, e.g.~\verb|\label{box:simple}|
-\end{description}
-%
-you can then use the convenience commands \verb|\FIG{view}|, \verb|\FIGSUPP[view]{sf1}|, \verb|\TABLE{example}|, \verb|\EQ{CLT}|, \verb|\BOX{simple}|, \verb|\FIGDATA[view]{first}|, \verb|\VIDEO{mv1}| and \verb|{\VIDEOSUPP}[view]{sv1}| \emph{without} the label prefixes, to generate cross-references \FIG{view}, \FIGSUPP[view]{sf1},  \TABLE{example}, \EQ{CLT}, \BOX{simple}, \FIGDATA[view]{first}, \VIDEO{mv1} and \VIDEOSUPP[view]{sv1}. Alternatively, use \verb|\autoref| with the full label, e.g.~\autoref{first:app} (although this may not work correctly for figures and tables in the appendices or boxes nor supplements at present).
-
-Really wide figures or tables, that take up the entire page, including the gutter space: use \verb|\begin{fullwidth}...\end{fullwidth}| as in \FIG{fullwidth}. And sometimes you may want to use feature boxes like \BOX{simple}.
-
-\begin{wrapfigure}{l}{.46\textwidth}
-\includegraphics[width=\hsize]{frog}
-\caption{A half-columnwidth image using wrapfigure, to be used sparingly. Note that using a wrapfigure before a sectional heading, near other floats or page boundaries is not recommended, as it may cause interesting layout issues. Use the optional argument to wrapfigure to control how many lines of text should be set half-width alongside it.}
-\label{fig:halfwidth}
-\end{wrapfigure}
-
-Some filler text to sit alongside the half-width figure. \lipsum[1-2]
 
 \begin{figure}
 \begin{fullwidth}
-\includegraphics[width=0.95\linewidth]{elife-18156-fig2}
-\caption{A very wide figure that takes up the entire page, including the gutter space.}
-\label{fig:fullwidth}
-\figsupp{There is no limit on the number of Figure Supplements for any one primary figure. Each figure supplement should be clearly labelled, Figure 1--Figure Supplement 1, Figure 1--Figure Supplement 2, Figure 2--Figure Supplement 1 and so on, and have a short title (and optional legend). Figure Supplements should be referred to in the legend of the associated primary figure, and should also be listed at the end of the article text file.}{\includegraphics[width=5cm]{frog}}
+\includegraphics[width=0.95\linewidth]{figures/publication_figures/figure-2.pdf}
+\caption{Differences in global metabolome of three bermudagrass lines inoculated and uninoculated with sting nematode.  Axes represent first two orthogonal axes from canonical correspondence analysis with percentages indicating relative contribution of each axis to constrained $\chi^2$.  Points represent the metabolome of individual bermugrass replicates projected into ordination space.  Ellipses are 95\% confidence intervals for each treatment-line combination.  Blue arrows represent explanatory variables; direction of arrow depicts direction of the gradient while length denotes relative (scaled) importance.  }
+\label{fig:figure2}
 \end{fullwidth}
 \end{figure}
+
+
+\begin{figure}
+\includegraphics[height = 9in]{figures/publication_figures/figure-3.pdf}
+\caption{Known compounds associated with each of three bermudagrass lines.  Values are Pearson's $\phi$ coefficient of association.  Higher (darker red) indicates compounds are more closely associated with that line.  }
+\label{fig:figure3}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width = 0.95\linewidth]{figures/publication_figures/figure-4.pdf}
+\caption{Normalized abundances of amino acid related compounds across three different bermudagrass lines inoculated and not-inoculated with sting nematode.  Abundances are normalized by compound and line to facilitate visual comparison.  Transparent points are individual observations; solid points and error bars denote mean and 95\% bootstrapped confidence intervals respectively.  Significant difference between plants with and without sting nematode are denoted by asterisks and was determined by Wilcoxon Sign Rank tests on non-normalized abundances with correction for the false discovery rate.  }
+\label{fig:figure4}
+\end{figure}
+
+
+\begin{figure}
+\includegraphics[width = 0.95\linewidth]{figures/publication_figures/figure-5.pdf}
+\caption{A,B,C) Relationships between important metabolites and nematode abundance.  Abundances and nematode counts were normalized to facilitate comparison across lines.  Points denote individual observations while blue lines and shaded areas denote linear model fits (all significant at $P < 0.05$ with $R^2$ greater than 0.2.  D) Modeled relationship between observed nematode counts and phenylalanine abundance (not normalized by line).  Lines represent modeled relationship across range of observed phenylalanine abundances with shaded areas denoting 95\% confidence intervals. }
+\label{fig:figure4}
+\end{figure}
+
+
+
+
+
+
 
 \subsection{Citations}
 
