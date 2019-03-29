@@ -155,7 +155,7 @@ figure2_ordination <- ggplot() +
               color = 'blue') + 
     theme_bw() +
     scale_color_grey(name = 'Treatment', 
-                     labels = c('Inoculated', 'Uninoculated')) + 
+                     labels = c('Inoculated', 'Not Inoculated')) + 
     scale_shape_manual(name = 'Line',
                        values = c(15, 17, 19)) +
     theme(legend.position = c(0.75, 0.12),
@@ -336,7 +336,8 @@ data.frame(sig)
 # Amino acids identified in analysis
 amino_acids <- c('L-Tyrosine', 
                  'Threonine/Homoserine',
-                 'Leucene', 
+                 'Leucene',
+                 'Citrulline',
                  'Phenylalanine',
                  'Alanine',
                  'L-Glutamic Acid',
@@ -419,7 +420,7 @@ fig4_amino_acids <- ggplot() +
                   label = '*')) +
     facet_wrap(line ~ ., ncol = 1) + 
     theme_bw() + 
-    scale_color_grey(labels = c('Inoculated', 'Uninoculated')) + 
+    scale_color_grey(labels = c('Inoculated', 'Not Inoculated')) + 
     scale_y_continuous(limits = c(-3,3)) + 
     labs(x = '', y = 'Normalized Abundance') + 
     theme(text = element_text(size = 10),
@@ -518,7 +519,7 @@ emmeans(phenylalanine_model, ~ line) %>% contrast() %>% cld()
 # examine model diagnostics
 summary(phenylalanine_model)
 Anova(phenylalanine_model, type = 'III')
-plot(phenylalanine_model, which = 1:6)
+#plot(phenylalanine_model, which = 1:6)
 qqPlot(phenylalanine_model)
 lrtest(lm(nematode_count ~ 1, data = phenylalanine),
        phenylalanine_model)
@@ -575,3 +576,138 @@ fig5_phenylalanine <- ggplot(palanine_model_results, aes(x = value, y = fit,
 ggsave(plot = fig5_phenylalanine, 
        filename = './figures/raw-figures/fig5_phenylalanine.pdf',
        width = 5, height = 3)
+
+# Pipecolic Acid Analysis ----------------------------
+
+# Prep nematode data
+nematode_bootstrap <- nematodes %>% 
+    select(line, nematode_count) %>% 
+    group_by(line) %>% 
+    summarize(mean = smean.cl.boot(nematode_count)[1],
+              lower = smean.cl.boot(nematode_count)[2],
+              upper = smean.cl.boot(nematode_count)[3])
+
+# Pull metabolite data on Pipecolic Acid
+pipecolic_acid <- metabolite_treatment %>% 
+    filter(revised_names == 'Pipecolate/L-Pipecolic Acid')
+
+# Visualize differences it Pipecolic Acid Production
+set.seed(72)
+
+dodge_width = 0.48
+jitter_width = 0.12
+
+fig6_pipecolic_acid <- ggplot(pipecolic_acid, 
+       aes(x = line, y = value, color = treatment)) + 
+    geom_point(position = position_jitterdodge(jitter.width = jitter_width,
+                                               dodge.width = dodge_width),
+               alpha = 0.48) + 
+    stat_summary(fun.data = 'mean_cl_boot', 
+                 geom = 'point',
+                 position = position_dodge(dodge_width)) + 
+    stat_summary(fun.data = 'mean_cl_boot', 
+                 geom = 'errorbar',
+                 position = position_dodge(dodge_width)) + 
+    theme_bw() + 
+    scale_color_grey(name = 'Treatment', 
+                     labels = c('Inoculated', 'Not Inoculated')) +
+    labs(x = 'Line', y = 'L-Pipecolic Acid Abundance') + 
+    theme(legend.position = 'bottom',
+          legend.background = element_rect(color = 'grey30'),
+          panel.border = element_blank(),
+          axis.line.x = element_line(size = 0.48, linetype = 'solid', 
+                                     color = 'black'),
+          axis.line.y = element_line(size = 0.48, linetype = 'solid', 
+                                     color = 'black'),
+          legend.margin = ggplot2::margin(1, 1, 1, 1)) 
+
+ggsave(plot = fig6_pipecolic_acid, 
+       filename = './figures/raw-figures/fig6_pipecolic_acid.pdf',
+       width = 5, height = 3.48)
+
+# Test results
+t_test <- function(df) {
+    ttest <- t.test(value ~ treatment, data = df)
+    data.frame(mean = ttest$estimate[1] - ttest$estimate[2],
+               lower = ttest$conf.int[1],
+               upper = ttest$conf.int[2],
+               pvalue = ttest$p.value)
+}
+
+# Look at differences in pipecolic acid production
+pipecolic_acid %>% group_by(line) %>% 
+    nest() %>%
+    mutate(ttest = purrr::map(data, t_test)) %>% 
+    select(line, ttest) %>% 
+    unnest() %>% 
+    mutate(p_adj = p.adjust(pvalue, method = 'bonferroni'))
+
+
+# Bootstrap differences in pipecolic acid production
+B = 1000
+
+bootstrapped_means <- tibble()
+
+for (i in 1:B) {
+    # Calculate and store means by line and treatment
+    calculate_means <- pipecolic_acid %>% 
+        group_by(line, treatment) %>% 
+        sample_frac(size = 1, replace = TRUE) %>% 
+        summarize(mean = mean(value)) %>% 
+        spread(treatment, mean) %>% 
+        ungroup() %>% 
+        mutate(bootstrap_rep = i)
+    
+    bootstrapped_means <- bind_rows(bootstrapped_means, calculate_means)
+
+}
+
+# Look and differences for display
+pipecolic_summary <- bootstrapped_means %>% 
+    mutate(difference = I - U) %>%
+    group_by(line) %>% 
+    summarize(mean = mean(difference),
+              lower = quantile(difference, 0.025),
+              upper = quantile(difference, 0.975))
+
+joined_pipecolic <- left_join(pipecolic_summary, 
+                              nematode_bootstrap, 
+                              by = 'line',
+                              suffix = c('_pipecolic', '_nematode'))
+
+# Look at differences associated with nematode production
+fig6_pipecolic_differences <- ggplot(joined_pipecolic, 
+       aes(x = mean_pipecolic, 
+           y = mean_nematode,
+           color = line,
+           shape = line)) + 
+    geom_point() + 
+    geom_errorbar(aes(x = mean_pipecolic, 
+                      ymin = lower_nematode, 
+                      ymax = upper_nematode),
+                  width = 0.12) + 
+    geom_errorbarh(aes(y = mean_nematode, 
+                       xmin = lower_pipecolic, 
+                       xmax = upper_pipecolic),
+                   height = 10) + 
+    geom_vline(xintercept = 0, 
+               color = 'black', 
+               alpha = 0.72, 
+               linetype = 'dashed') +
+    scale_color_grey(name = 'Line') + 
+    scale_shape_manual(name = 'Line',
+                       values = c(15, 17, 19)) + 
+    labs(x = 'Increase in Pipecolic Acid', y = 'Sting Nematode Count') + 
+    theme_bw() + 
+    theme(legend.position = 'bottom',
+          legend.background = element_rect(color = 'grey30'),
+          panel.border = element_blank(),
+          axis.line.x = element_line(size = 0.48, linetype = 'solid', 
+                                     color = 'black'),
+          axis.line.y = element_line(size = 0.48, linetype = 'solid', 
+                                     color = 'black'),
+          legend.margin = ggplot2::margin(1, 1, 1, 1)) 
+
+ggsave(plot = fig6_pipecolic_differences, 
+       filename = './figures/raw-figures/fig6_pipecolic_differences.pdf',
+       width = 5, height = 3.48)

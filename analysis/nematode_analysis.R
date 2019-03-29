@@ -33,7 +33,7 @@ fig1_nematode_counts <- ggplot(nematode_counts, aes(x = line, y = nematode_count
                  width = dodge_width/2) + 
     stat_summary(fun.data = 'mean_cl_boot', geom = 'point',
                  position = position_dodge(dodge_width)) + 
-    scale_color_grey(labels = c('Inoculated', 'Uninoculated')) +
+    scale_color_grey(labels = c('Inoculated', 'Not Inoculated')) +
     theme_bw() + 
     theme(legend.title = element_blank(),
           legend.position = c(0.78, 0.124),
@@ -68,7 +68,7 @@ AIC(nematode_count_mod)
 BIC(nematode_count_mod)
 lrtest(nematode_count_mod, baseline_count_mod)
 qqPlot(nematode_count_mod$residuals)
-plot(nematode_count_mod, which = 1:6)
+# plot(nematode_count_mod, which = 1:6)
 
 # Post-hoc analysis of nematode counts
 nematode_count_emm <- emmeans(nematode_count_mod, ~ line * treatment)
@@ -93,7 +93,7 @@ fig2_root_weights <- ggplot(nematode_counts[-c(31,30),], aes(x = line, y = weigh
                  width = dodge_width/2) + 
     stat_summary(fun.data = 'mean_cl_boot', geom = 'point',
                  position = position_dodge(dodge_width)) + 
-    scale_color_grey(labels = c('Inoculated', 'Uninoculated')) + 
+    scale_color_grey(labels = c('Inoculated', 'Not Inoculated')) + 
     theme_bw() +
     theme(legend.title = element_blank(),
           legend.position = c(0.9, 0.124),
@@ -126,7 +126,7 @@ AIC(mass_mod)
 BIC(mass_mod)
 lrtest(mass_mod, baseline_mass_mod)
 qqPlot(mass_mod$residuals)
-plot(mass_mod, which = 1:6)
+#plot(mass_mod, which = 1:6)
 
 # it looks like we have two pretty large outliers. Let's double check that.
 outlierTest(mass_mod)
@@ -141,7 +141,7 @@ Anova(mass_mod, type = 'III')
 AIC(mass_mod)
 BIC(mass_mod)
 qqPlot(mass_mod$residuals)
-plot(mass_mod, which = 1:6)
+#plot(mass_mod, which = 1:6)
 outlierTest(mass_mod)
 
 # test removing both observations
@@ -161,7 +161,7 @@ AIC(mass_mod_no_outlier)
 BIC(mass_mod_no_outlier)
 lrtest(mass_mod_no_outlier, baseline_mass_no_outlier)
 qqPlot(mass_mod_no_outlier$residuals)
-plot(mass_mod_no_outlier, which = 1:6)
+# plot(mass_mod_no_outlier, which = 1:6)
 outlierTest(mass_mod_no_outlier)
 
 # post-hoc
