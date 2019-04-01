@@ -439,7 +439,7 @@ ggsave(plot = fig4_amino_acids,
 # select compounds of interest based on:
 # preliminary screening of differences related to AB39 
 # and knowledge of plant defense pathways
-compounds_of_interest <- c('D-Glucaronic Acid', 
+compounds_of_interest <- c('D-Glucuronic Acid', 
                            'Phenylalanine', 
                            'Glycolate')
 
@@ -631,6 +631,8 @@ t_test <- function(df) {
     data.frame(mean = ttest$estimate[1] - ttest$estimate[2],
                lower = ttest$conf.int[1],
                upper = ttest$conf.int[2],
+               t_statistic = ttest$statistic,
+               df = ttest$parameter,
                pvalue = ttest$p.value)
 }
 

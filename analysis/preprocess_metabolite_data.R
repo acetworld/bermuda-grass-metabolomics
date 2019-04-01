@@ -122,7 +122,7 @@ compound_names <- processed_metabolites %>%
                              'Citrulline',
                              'Cytosine',
                              'D-(+)-Raffinose',
-                             'D-Glucaronic Acid',
+                             'D-Glucuronic Acid',
                              'D-Saccharic Acid',
                              'Diethanolamine',
                              'Dipropylene Glycol',
