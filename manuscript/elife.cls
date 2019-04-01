@@ -11,6 +11,7 @@
 \RequirePackage{etoolbox}
 \RequirePackage{regexpatch}
 \RequirePackage{ifxetex,ifluatex}
+\RequirePackage{siunitx}
 
 \newif\ifxetexorluatex
 \ifxetex
