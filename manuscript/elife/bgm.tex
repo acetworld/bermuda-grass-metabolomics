@@ -119,9 +119,9 @@ To evaluate the effects of nematode infection on bermudagrass metabolite respons
 
 \subsection{Metabolomics}
 
-Following weighing the entire root biomass, \SI{0.5}{\gram} root samples were transferred to \SI{2}{\milli\liter} centrifuge tubes and ground in a Geno/Grinder 2010 tissue homogenizer with ball bearings.  After grinding, metabolites were extracted through addition of \SI{1.5}{\milli\liter} of 1:1 Methanol:Ammonium Acetate, addition of \SI{20}{\micro\liter} internal standard mix, vortexing, and centrifugation at 17,000G for 10 minutes.  Following centrifugation, \SI{800}{\micro\liter} of supernatant was transferred to an LC vial and \SI{1}{\micro\liter} introduced to a Thermo Scientific Dionex Ultimate 3000 UHPLC using reverse phase chromatography with a ACE Excel 2 C18-PFP (100 x \SI{2.1}{\milli\meter}, \SI{2}{\milli\meter}) at 25\textsuperscript{o}C and a flow rate of \SI{350}{\micro\liter}/min.  \textbf{....Solvent Gradient Here....} 
+Following weighing the entire root biomass, \SI{0.5}{\gram} root samples were transferred to \SI{2}{\milli\liter} centrifuge tubes and ground in a Geno/Grinder 2010 tissue homogenizer with ball bearings.  After grinding, metabolites were extracted through addition of \SI{1.5}{\milli\liter} of 1:1 Methanol:Ammonium Acetate, addition of \SI{20}{\micro\liter} internal standard mix, vortexing, and centrifugation at 17,000G for 10 minutes.  Following centrifugation, \SI{800}{\micro\liter} of supernatant was transferred to an LC vial and \SI{1}{\micro\liter} introduced to a Thermo Scientific Dionex Ultimate 3000 UHPLC using reverse phase chromatography with a ACE Excel 2 C18-PFP (100 x \SI{2.1}{\milli\meter}, \SI{2}{\milli\meter}) at 25\textsuperscript{o}C and a flow rate of \SI{350}{\micro\liter}/min.  Analysis began at 100\% 0.1\% formic acid in water for three minutes than ramped to 80\% acetonitrile for 10 minutes where the ratio was held for an additional 3 minutes giving a total run time of 16 minutes.  
 
-Following separation by liquid chromatography, samples were introduced to a Thermo Q-Exactive Orbitrap mass spetrometer.  All samples were analyzed in positive and negative heated electrospray ionization with a mass resolution of 35,000 at m/z 200 using polarity switching. \textbf{...More Details Here...} .  
+Following separation by liquid chromatography, samples were introduced to a Thermo Q-Exactive Orbitrap mass spectrometer.  All samples were analyzed using positive and negative heated electrospray ionization with a mass resolution of 35,000 at m/z 200 using polarity switching. Probe temperature was held at 350\textsuperscript{o}C, spray voltage at 3500 V, capillary temperature at 320\textsuperscript{o}C, sheath gas at 40, and auxillary gas at 10.  
 
 
 \subsection{Analysis}
@@ -150,7 +150,7 @@ To further explore the effect of individual compounds on nematode abundance, com
 
 \subsubsection{Data Management}
 
-Raw LC/mass spectrometry data were uploaded to Metabolomics Workbench \citep{sud2015metabolomics}.  All analysis on the raw data was conducted in R version 3.5.2 using RStudio as an IDE (with Vim keybindings) \cite{rcore2018,rstudio}.  A full list of packages used to facilitate the analysis along with citations can be found in Appendix E.  All code, including dockerfiles and manuscript documentation, is available on GitHub (...).  
+Raw LC/mass spectrometry data were uploaded to Metabolomics Workbench \citep{sud2015metabolomics}.  All analysis on the raw data was conducted in R version 3.5.2 using RStudio as an IDE (with Vim keybindings) \citep{rcore2018,rstudio}.  A full list of packages used to facilitate the analysis along with citations can be found in Appendix E.  All code, including manuscript documentation, is available on GitHub (https://github.com/acetworld/bermuda-grass-metabolomics).  
 
 
 
