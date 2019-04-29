@@ -33,7 +33,7 @@ fig1_nematode_counts <- ggplot(nematode_counts, aes(x = line, y = nematode_count
                  width = dodge_width/2) + 
     stat_summary(fun.data = 'mean_cl_boot', geom = 'point',
                  position = position_dodge(dodge_width)) + 
-    scale_color_grey(labels = c('Inoculated', 'Not Inoculated')) +
+    scale_color_grey(labels = c('Inoculated', 'Noninoculated')) +
     theme_bw() + 
     theme(legend.title = element_blank(),
           legend.position = c(0.78, 0.124),
@@ -45,7 +45,7 @@ fig1_nematode_counts <- ggplot(nematode_counts, aes(x = line, y = nematode_count
           axis.line.y = element_line(size = 0.48, linetype = 'solid', 
                                      color = 'black'),
           legend.margin = ggplot2::margin(1, 1, 1, 1)) + 
-    labs(x = 'Line', y = 'Sting Nematode Count')
+    labs(x = 'Line', y = bquote('Sting Nematodes / 100'~cm^3))
 
 ggsave(plot = fig1_nematode_counts, filename = './figures/raw-figures/fig1a-nematode-counts.pdf',
        width = 5, height = 3)
@@ -93,7 +93,7 @@ fig2_root_weights <- ggplot(nematode_counts[-c(31,30),], aes(x = line, y = weigh
                  width = dodge_width/2) + 
     stat_summary(fun.data = 'mean_cl_boot', geom = 'point',
                  position = position_dodge(dodge_width)) + 
-    scale_color_grey(labels = c('Inoculated', 'Not Inoculated')) + 
+    scale_color_grey(labels = c('Inoculated', 'Noninoculated')) + 
     theme_bw() +
     theme(legend.title = element_blank(),
           legend.position = c(0.9, 0.124),

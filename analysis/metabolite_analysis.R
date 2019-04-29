@@ -137,7 +137,7 @@ vectors$Name <- rownames(vectors)
 # remove TreatmentU because of negligible contribution
 # Relabel vectors for display
 vectors <- vectors %>%
-    mutate(labels = c('AB33', 'AB39', 'Uninoculated',
+    mutate(labels = c('AB33', 'AB39', 'Noninoculated',
                       'AB33:Treatment',
                       'AB39:Treatment'),
            new_y = if_else(CCA2 < 0, CCA2 - 0.24, CCA2 + 0.24))
@@ -155,7 +155,7 @@ figure2_ordination <- ggplot() +
               color = 'blue') + 
     theme_bw() +
     scale_color_grey(name = 'Treatment', 
-                     labels = c('Inoculated', 'Not Inoculated')) + 
+                     labels = c('Inoculated', 'Noninoculated')) + 
     scale_shape_manual(name = 'Line',
                        values = c(15, 17, 19)) +
     theme(legend.position = c(0.75, 0.12),
@@ -420,7 +420,7 @@ fig4_amino_acids <- ggplot() +
                   label = '*')) +
     facet_wrap(line ~ ., ncol = 1) + 
     theme_bw() + 
-    scale_color_grey(labels = c('Inoculated', 'Not Inoculated')) + 
+    scale_color_grey(labels = c('Inoculated', 'Noninoculated')) + 
     scale_y_continuous(limits = c(-3,3)) + 
     labs(x = '', y = 'Normalized Abundance') + 
     theme(text = element_text(size = 10),
@@ -477,7 +477,7 @@ fig5_compounds_of_interest <- ggplot(nematode_metabolites, aes(x = norm_value, y
     facet_wrap( ~ revised_names, ncol = 2, scales = 'free') + 
     stat_smooth(method = 'lm') + 
     theme_bw() + 
-    labs(x = 'Normalized Abundance', y = 'Normalized Nematode Count') + 
+    labs(x = 'Normalized Abundance', y = 'Normalized Sting Nematode Numbers') + 
     theme(panel.border = element_blank(),
           axis.line.x = element_line(size = 0.48, linetype = 'solid', 
                                      color = 'black'),
@@ -561,7 +561,8 @@ fig5_phenylalanine <- ggplot(palanine_model_results, aes(x = value, y = fit,
     scale_fill_grey(name = 'Line') + 
     scale_linetype_discrete(name = 'Line') + 
     theme_bw() + 
-    labs(x = 'Phenylalanine Abundance', y = 'Nematode Count') + 
+    labs(x = 'Phenylalanine Abundance', 
+         y = bquote('Sting Nematodes / 100'~cm^3)) + 
     theme(legend.text = element_text(size = 10),
           legend.position = c(0.9, 0.25), 
           legend.direction = 'vertical',
@@ -610,7 +611,7 @@ fig6_pipecolic_acid <- ggplot(pipecolic_acid,
                  position = position_dodge(dodge_width)) + 
     theme_bw() + 
     scale_color_grey(name = 'Treatment', 
-                     labels = c('Inoculated', 'Not Inoculated')) +
+                     labels = c('Inoculated', 'Noninoculated')) +
     labs(x = 'Line', y = 'L-Pipecolic Acid Abundance') + 
     theme(legend.position = 'bottom',
           legend.background = element_rect(color = 'grey30'),
@@ -699,7 +700,8 @@ fig6_pipecolic_differences <- ggplot(joined_pipecolic,
     scale_color_grey(name = 'Line') + 
     scale_shape_manual(name = 'Line',
                        values = c(15, 17, 19)) + 
-    labs(x = 'Increase in Pipecolic Acid', y = 'Sting Nematode Count') + 
+    labs(x = 'Increase in Pipecolic Acid', 
+         y = bquote('Sting Nematodes / 100'~cm^3)) + 
     theme_bw() + 
     theme(legend.position = 'bottom',
           legend.background = element_rect(color = 'grey30'),
