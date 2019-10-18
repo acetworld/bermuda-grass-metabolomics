@@ -52,10 +52,10 @@ To explore the extent to which ectoparasitic nematodes can modify host plant met
 
 \section*{Results}
 
-To investigate whether sting nematodes modify metabolite production in their host plants, mixed age \textit{Belonolaimus longicaudatus} nematodes were introduced to the root zones of three African bermudagrass (\textit{Cynodon transvaalensis}) lines of differing tolerance: one susceptible line (AB03), one moderately tolerant line (AB33), and one tolerant line (AB39).  Comparison control plants received no nematodes.  Ninety days after inoculation,  Plants were unearthed and sting nematode damage assessed.  Following damage assessment, untargeted metabolomic profiling was conducted on root samples.  
+To investigate whether sting nematodes modify metabolite production in their host plants, mixed age \textit{Belonolaimus longicaudatus} nematodes were introduced to the root zones of three African bermudagrass (\textit{Cynodon transvaalensis}) lines of differing tolerance: one susceptible line (AB03), one moderately tolerant line (AB33), and one tolerant line (AB39).  Tolerance in these bermudagrass lines had been determined in previous work; lines are considered tolerant if there was no reduction in root length or had greater root length than the ‘Tifway’ cultivar despite \textit{B. longicaudatus} infection \cite{pang2011bermudagrass, pang2011screening}.  In our work, comparison control plants received no nematodes.  Ninety days after inoculation,  Plants were unearthed and sting nematode damage assessed.  Following damage assessment, untargeted metabolomic profiling was conducted on root samples.  
 
 \subsection*{Bermudagrass response to sting nematode feeding}
-Sting nematode densities were significantly ($df = 36$, $t > 4$, $p < 0.004$, Tukey's method) higher on moderately tolerant (AB33) bermudagrass (Figure \ref{fig:figure1}A).  (No sting nematodes were recovered from comparison plants not inoculated with sting nematodes; there was no contamination.)  No significant ($df = 36$, $t = -0.75$, $p = 0.73$) differences in sting nematode populations on susceptible (AB03) or tolerant (AB39) lines were observed.  
+Sting nematode population densities were significantly ($df = 36$, $t > 4$, $p < 0.004$, Tukey's method) higher on moderately tolerant (AB33) bermudagrass (Figure \ref{fig:figure1}A).  (No sting nematodes were recovered from comparison plants not inoculated with sting nematodes; there was no contamination.)  No significant ($df = 36$, $t = -0.75$, $p = 0.73$) differences in sting nematode population densities on susceptible (AB03) or tolerant (AB39) lines were observed.  
 
 \begin{figure}
 \begin{fullwidth}
@@ -74,7 +74,7 @@ These differences are reflected in differences in the global metabolome obtained
 \begin{figure}
 \begin{fullwidth}
 \includegraphics[width=0.95\linewidth]{figures/publication_figures/figure-2.pdf}
-\caption{Differences in global metabolome of three bermudagrass lines inoculated and noninoculated with sting nematode.  Axes represent first two orthogonal axes from canonical correspondence analysis with percentages indicating relative contribution of each axis to constrained $\chi^2$.  Points represent the metabolome of individual bermugrass replicates projected into ordination space.  Ellipses are 95\% confidence intervals for each treatment-line combination.  Blue arrows represent explanatory variables; direction of arrow depicts direction of the gradient while length denotes relative (scaled) importance.  }
+\caption{Differences in global metabolome of three bermudagrass lines inoculated and noninoculated with sting nematode.  Axes represent first two orthogonal axes from canonical correspondence analysis with percentages indicating relative contribution of each axis to constrained $\chi^2$ (or 42\% of observed inertia of the global metabolome).  Points represent the metabolome of individual bermugrass replicates projected into ordination space.  Ellipses are 95\% confidence intervals for each treatment-line combination.  Blue arrows represent explanatory variables; direction of arrow depicts direction of the gradient while length denotes relative (scaled) importance.  }
 \label{fig:figure2}
 \end{fullwidth}
 \end{figure}
@@ -142,7 +142,7 @@ Three African bermudagrass (\textit{Cynodon transvaalensis} Burtt-Davy) lines we
 
 \subsection*{Bioassays}
 
-To evaluate the effects of nematode infection on bermudagrass metabolite response, treated plants in conetainers were inoculated with 50 sting nematodes of mixed age and gender per conetainer.  Control (noninoculated) plants did not receive any nematode treatment. Seven replications of each line (AB03, AB33, AB39) and treatment (inoculated, noninoculated) combination were conducted.  Ninety days following nematode inoculation (time enough for nematode growth and reproduction), plants were removed from the conetainer, the soil plug removed, and the 100ml of sand gently rinsed to extract the nematodes for further processing through centrifugal flotation and counting on an inverted microscope.  Rinsed roots were placed in 50ml falcon tubes then immersed in liquid nitrogen and stored at -80\textsuperscript{o}C until lyophilization.  Lyophilzed roots were weighed and samples selected for metabolomics analysis. 
+To evaluate the effects of nematode infection on bermudagrass metabolite response, treated plants in containers were inoculated with 50 sting nematodes of mixed age and gender per container.  Control (noninoculated) plants did not receive any nematode treatment. Seven replications of each line (AB03, AB33, AB39) and treatment (inoculated, noninoculated) combination were conducted.  Ninety days following nematode inoculation (time enough for nematode growth and reproduction), plants were removed from the container, the soil plug removed, and the 100ml of sand gently rinsed to extract the nematodes for further processing through centrifugal flotation and counting on an inverted microscope.  Rinsed roots were placed in 50ml falcon tubes then immersed in liquid nitrogen and stored at -80\textsuperscript{o}C until lyophilization.  Lyophilzed roots were weighed and samples selected for metabolomics analysis. 
 
 \subsection*{Metabolomics}
 
@@ -177,7 +177,7 @@ To further explore the effect of individual compounds on nematode abundance, com
 
 \subsubsection*{Data Management}
 
-Raw LC/mass spectrometry data were uploaded to Metabolomics Workbench \cite{sud2015metabolomics}.  All analysis on the raw data was conducted in R version 3.5.2 using RStudio as an IDE (with Vim keybindings) \cite{rcore2018,rstudio}.  A full list of packages used to facilitate the analysis along with citations can be found in Appendix E.  All code, including manuscript documentation, is available on GitHub (https://github.com/acetworld/bermuda-grass-metabolomics).  
+Raw LC/mass spectrometry data were uploaded to Metabolomics Workbench \cite{sud2015metabolomics}.  All analysis on the raw data was conducted in R version 3.5.2 using RStudio as an IDE (with Vim keybindings) \cite{rcore2018,rstudio}.  Packages used to facilitate analysis include: tidyverse \cite{tidyverse}, devtools \cite{devtools}, pacman \cite{pacman}, MASS \cite{mass}, Hmisc \cite{hmisc}, cowplot \cite{cowplot}, stringr \cite{stringr}, foreach \cite{foreach}, testthat \cite{testthat}, VIM \cite{VIM}, vsn \cite{vsn}, pvclust \cite{pvclust}, dendextend \cite{dendextend}, lettercase \cite{lettercase}, vegan \cite{vegan}, lmtest \cite{lmtest}, emmeans \cite{emmeans}, car \cite{car}, candisc \cite{candisc}, indicspecies \cite{indicspecies}, ggdendro \cite{ggdendro}.  All code, including manuscript documentation, is available on GitHub (https://github.com/acetworld/bermuda-grass-metabolomics).  
 
 \bibliography{bgm}
 
